@@ -1,0 +1,8 @@
+.wrapper {
+    height: auto;
+    margin-left: 2rem;
+    padding: 20px;
+    width: 1200px;
+    flex-grow: 1;
+    overflow: scroll;
+}

@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+
 #mapViewer {
     position: absolute;
     left: 0px;
@@ -32,4 +32,11 @@
         -1px 1px 0 #000,
         -1px -1px 0 #000,
         1px -1px 0 #000;
+}
+html, body, app-root {
+    height: 100%;
+}
+app-root {
+    display: flex;
+    flex-direction: column;
 }
