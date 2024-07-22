@@ -3,7 +3,7 @@ import { WorldMapComponent } from './world-map/world-map.component';
 
 export const routes: Routes = [
     {
-        path: 'home',
+        path: '',
         component: WorldMapComponent
     }
 ];

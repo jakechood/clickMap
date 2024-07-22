@@ -80,7 +80,7 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              "src/favicon.ico",
+              "src/location.png",
               "src/assets"
             ],
             "styles": [
