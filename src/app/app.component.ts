@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { WorldMapComponent } from "./world-map/world-map.component";
 import { DemographicInfoComponent } from "./demographic-info/demographic-info.component";
 import { CountryLookupService } from './country-lookup.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,12 @@ import { CountryLookupService } from './country-lookup.service';
   imports: [RouterOutlet, WorldMapComponent, DemographicInfoComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
+})
+@NgModule({
+  declarations: [],
+  imports: [
+    HttpClientModule
+  ],
 })
 export class AppComponent {
   title = 'Clickable World Map';
