@@ -1,3 +1,4 @@
+import { R3NgModuleMetadataKind } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -13,44 +14,48 @@ export class CountryLookupService {
       let clicked = EventTarget;
       // Load location name from world map component
        // TODO: How do I fix this?
-      $(clicked).load("./world-map/world-map.component.html");
+      $("path:target").load("./world-map/world-map.component.html");
 
      
 
       // Initiate new XML Http Request
       let xhr = new XMLHttpRequest();
-      $.addEventListener("load", CountryLookupService);
-      $.open("GET", "api.geonames.org/citiesJSON?");
+      xhr.addEventListener("load", CountryLookupService);
+      xhr.open("GET", "api.geonames.org/citiesJSON?");
 
       // let requestData = path.id or path.name or path.class
-      $.get("api.geonames.org/citiesJSON?", locName, function(data) {
+      $.get("api.geonames.org/search?", locName, function(data) {
       $.ajax({
-        url: "api.geonames.org/citiesJSON?",
+        url: "api.geonames.org/search?",
         data: {
-            geoNameId : locName,
-            units: "imperial",
-            
-            username: "jakechood"
+            country : locName,
+            units : "imperial",
+            featureCode : "PPLC",
+            featureCode : "RGN",
+            featureCode : "FLLS",
+            featureCode :  "LK",
+            username : "jakechood"
         },  
         type: "GET",
         dataType: "json",
         success : function() {
-            // What needs to happen after this ajax call succeeds?
+
+          $.ajax({
+            url: "api.worldbank.org/v2",
+            data: {
+                country : locName,
+            },  
+            type: "GET",
+            dataType: "json",
+        });
+        let countryIncomeLevel = data.incomeLevel;
+        $("incomeLevel").text = countryIncomeLevel
         }
       });
       xhr.send();
     }).subscribe(data => {
           }).done(function(data) {
-              $.ajax({
-                url: "api.geonames.org/citiesJSON?",
-                type: "GET",
-                data: {
-                    geoNameId : locName,
-                    units: "imperial",
-                    dataType: 'json',
-                    username: "jakechood"
-                },
-          });
+            
           $("#working").hide();
           $("#results").show();
 
@@ -60,7 +65,7 @@ export class CountryLookupService {
         let countryWaterfalls = data.featureCode[2];
         let countryLakes = data.featureCode[3];
       // Display the location data retrieved from the API 
-        $("#locName").text = "Afghanistan";        
+        $("#locName").text = locName;        
         $("#countryCapital").text = countryCapital;
         $("#countryRegion").text = countryRegion;
         $("#countryWaterfalls").text = countryWaterfalls;
