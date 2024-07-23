@@ -48,3 +48,7 @@ app-root {
     display: flex;
     flex-direction: column;
 }
+path:hover {
+    background-color: blueviolet;
+    color: blue;
+}
