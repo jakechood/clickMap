@@ -26,13 +26,14 @@ export class CountryLookupService {
       $.get("api.geonames.org/citiesJSON?", locName, function(data) {
       $.ajax({
         url: "api.geonames.org/citiesJSON?",
-        type: "GET",
         data: {
             geoNameId : locName,
             units: "imperial",
-            dataType: 'json',
+            
             username: "jakechood"
         },  
+        type: "GET",
+        dataType: "json",
         success : function() {
             // What needs to happen after this ajax call succeeds?
         }
