@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { CountryLookupService } from '../country-lookup.service';
 import { DemographicInfoComponent } from '../demographic-info/demographic-info.component';
 import { ReplaySubject } from 'rxjs';
-import { addData } from '../demographic-info/demographic-info.component'
 
 @Component({
   selector: 'app-world-map',
