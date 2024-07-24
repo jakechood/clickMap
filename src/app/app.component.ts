@@ -16,11 +16,4 @@ import { HttpClientModule } from '@angular/common/http';
 
 export class AppComponent {
   title = 'Clickable World Map';
-  constructor(private countryService: CountryLookupService) {}
-  // getCountryDetails(event: any) {
-  //   if (EventTarget.class.value != null) {
-  //     var clickedName = target.class.value;
-  //   }
-  //   this.countryService.getCountryData(clickedName);
-  // };
-};
+}
