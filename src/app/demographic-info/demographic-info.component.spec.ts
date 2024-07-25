@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DemographicInfoComponent } from './demographic-info.component';
 
 describe('DemographicInfoComponent', () => {
