@@ -12,11 +12,12 @@ import { ReplaySubject } from 'rxjs';
 })
 
 export class WorldMapComponent {
-  countryData : any;
-  constructor(public countryService: CountryLookupService) {}
+  // Construct service pull
+  constructor(public countryService: CountryLookupService, public countryData : Array<any> ) {}
+  // Declare function named in svg element
+  
   clickCountry(event:any) {
-    @Output(countryData = new Array<any> (
-      this.countryData = JSON.stringify(
+    @NgFor(
         this.countryService.getCountryData(event.target.id).subscribe(data => ({
           // Separate data into logical variables
           locName : data[1][0].name,
@@ -25,13 +26,10 @@ export class WorldMapComponent {
           countryLat : data[1][0].latitude,
           countryLong : data[1][0].longitude,
           countryIncomeLevel : data[1][0].incomeLevel
-      }
+          })
         )
-    
-    ))
-  ))
-
-  }
-  
+      );
+  };
+  title = 'countryData';
 }
 
