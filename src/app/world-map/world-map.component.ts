@@ -13,23 +13,23 @@ import { ReplaySubject } from 'rxjs';
 
 export class WorldMapComponent {
   // Construct service pull
-  constructor(public countryService: CountryLookupService, public countryData : Array<any> ) {}
+  constructor(public countryService: CountryLookupService) {}
   // Declare function named in svg element
-  
   clickCountry(event:any) {
-    @NgFor(
+    // Output service call with function targeting mouse target
+      @Output(
         this.countryService.getCountryData(event.target.id).subscribe(data => ({
-          // Separate data into logical variables
-          locName : data[1][0].name,
-          countryCapital : data[1][0].capitalCity,
-          countryRegion : data[1][0].region,
-          countryLat : data[1][0].latitude,
-          countryLong : data[1][0].longitude,
-          countryIncomeLevel : data[1][0].incomeLevel
+          // // Separate data into logical variables
+          // locName : data[1][0].name,
+          // countryCapital : data[1][0].capitalCity,
+          // countryRegion : data[1][0].region,
+          // countryLat : data[1][0].latitude,
+          // countryLong : data[1][0].longitude,
+          // countryIncomeLevel : data[1][0].incomeLevel
           })
         )
       );
   };
-  title = 'countryData';
+
 }
 
