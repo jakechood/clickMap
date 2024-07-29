@@ -19,6 +19,7 @@ export class WorldMapComponent {
     // Output service call with function targeting mouse target
     @Output(
         this.countryService.getCountryData(event.target.id).subscribe(data => ({
+          console.log(data);
           // // Separate data into logical variables
           // locName : data[1][0].name,
           // countryCapital : data[1][0].capitalCity,
