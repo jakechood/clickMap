@@ -26,10 +26,10 @@ export class AppComponent {
     // Separate data into logical variables
     "locName" : data[1][0].name,
     "countryCapital" : data[1][0].capitalCity,
-    "countryRegion" : data[1][0].region,
+    "countryRegion" : data[1][0].region.value,
     "countryLat" : data[1][0].latitude,
     "countryLong" : data[1][0].longitude,
-    "countryIncomeLevel" : data[1][0].incomeLevel
+    "countryIncomeLevel" : data[1][0].incomeLevel.value
     }
     }
   
