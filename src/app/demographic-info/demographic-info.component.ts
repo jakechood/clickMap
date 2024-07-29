@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { WorldMapComponent } from '../world-map/world-map.component';
 import { CountryLookupService } from '../../app/country-lookup.service';
 import { AppComponent } from '../app.component';
