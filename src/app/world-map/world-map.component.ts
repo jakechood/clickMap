@@ -17,7 +17,7 @@ export class WorldMapComponent {
   // Declare function named in svg element
   clickCountry(event:any) {
     // Output service call with function targeting mouse target
-      @Output(
+    @Output(
         this.countryService.getCountryData(event.target.id).subscribe(data => ({
           // // Separate data into logical variables
           // locName : data[1][0].name,
