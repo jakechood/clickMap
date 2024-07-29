@@ -6,3 +6,9 @@
     flex-grow: 1;
     overflow: scroll;
 }
+path:active {
+    fill: blueviolet;
+}
+path:hover {
+    fill: blueviolet;
+}
