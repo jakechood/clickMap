@@ -15,16 +15,18 @@ export class DemographicInfoComponent {
   countryDetails : any;
   constructor(private countryService : CountryLookupService) {}
   clickCountry(event:any) {
-  this.countryService.getCountryData(event.target.id).subscribe(data => ({
+  this.countryService.getCountryData(event.target.id).subscribe(data => {
+    this.countryDetails = {
           
     // Separate data into logical variables
-    locName : data[1][0].name,
-    countryCapital : data[1][0].capitalCity,
-    countryRegion : data[1][0].region,
-    countryLat : data[1][0].latitude,
-    countryLong : data[1][0].longitude,
-    countryIncomeLevel : data[1][0].incomeLevel
-    })
+    "locName" : data[1][0].name,
+    "countryCapital" : data[1][0].capitalCity,
+    "countryRegion" : data[1][0].region,
+    "countryLat" : data[1][0].latitude,
+    "countryLong" : data[1][0].longitude,
+    "countryIncomeLevel" : data[1][0].incomeLevel
+    }
+    }
   
   )
 }
